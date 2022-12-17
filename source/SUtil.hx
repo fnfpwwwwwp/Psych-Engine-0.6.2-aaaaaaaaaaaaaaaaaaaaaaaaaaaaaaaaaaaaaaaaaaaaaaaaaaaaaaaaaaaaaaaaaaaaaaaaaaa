@@ -34,8 +34,6 @@ class SUtil
 	public static function getPath():String
 	{
 		#if (android && MODS_ALLOWED)
-		if (aDir != null && aDir.length > 0)
-		
 	        return Environment.getExternalStorageDirectory() + '/' + '.' + Application.current.meta.get('file') + '/';
 		#else
 		return '';
@@ -54,7 +52,7 @@ class SUtil
 		if (Permissions.getGrantedPermissions().contains(Permissions.READ_EXTERNAL_STORAGE) || Permissions.getGrantedPermissions().contains(Permissions.WRITE_EXTERNAL_STORAGE))
 		{
 			if (!FileSystem.exists(Environment.getExternalStorageDirectory() + '/' + '.' + Application.current.meta.get('file') + '/'))
-				FileSystem.createDirectory(Tools.getExternalStorageDirectory() + '/' + '.' + Application.current.meta.get('file') + '/');
+				FileSystem.createDirectory(Environment.getExternalStorageDirectory() + '/' + '.' + Application.current.meta.get('file') + '/');
 
 			if (!FileSystem.exists(SUtil.getPath() + 'assets/') && !FileSystem.exists(SUtil.getPath() + 'mods/'))
 			{
