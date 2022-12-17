@@ -49,6 +49,13 @@ class Main extends Sprite
 	{
 		super();
 
+                #if !android
+		Lib.current.loaderInfo.uncaughtErrorEvents.addEventListener(UncaughtErrorEvent.UNCAUGHT_ERROR, onCrash);
+		#else
+		SUtil.uncaughtErrorHandler();
+		#end
+		SUtil.check();
+		
 		if (stage != null)
 		{
 			init();
