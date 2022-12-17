@@ -54,6 +54,7 @@ class Main extends Sprite
 		#else
 		SUtil.uncaughtErrorHandler();
 		#end
+		
 		SUtil.check();
 		
 		if (stage != null)
