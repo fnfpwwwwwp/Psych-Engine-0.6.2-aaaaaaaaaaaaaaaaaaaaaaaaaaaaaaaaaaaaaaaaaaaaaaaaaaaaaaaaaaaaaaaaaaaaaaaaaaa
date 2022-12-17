@@ -47,7 +47,7 @@ import Discord;
 #end
 
 #if android
-import android.Hardware;
+import android.Tools;
 #end
 
 using StringTools;
@@ -398,7 +398,7 @@ class FunkinLua {
 			}
 			Lua.pushnil(lua);
 		});
-		/*Lua_helper.add_callback(lua, "getGlobals", function(luaFile:String){ // returns a copy of the specified file's globals
+		Lua_helper.add_callback(lua, "getGlobals", function(luaFile:String){ // returns a copy of the specified file's globals
 			var cervix = luaFile + ".lua";
 			if(luaFile.endsWith(".lua"))cervix=luaFile;
 			var doPush = false;
@@ -481,7 +481,7 @@ class FunkinLua {
 				}
 			}
 			Lua.pushnil(lua);
-		});*/
+		});
 		Lua_helper.add_callback(lua, "isRunning", function(luaFile:String){
 			var cervix = luaFile + ".lua";
 			if(luaFile.endsWith(".lua"))cervix=luaFile;
@@ -2113,7 +2113,7 @@ class FunkinLua {
 
 		Lua_helper.add_callback(lua, "vibration", function(milliseconds:Int) {
 			#if android
-			Hardware.vibrate(milliseconds);
+			Tools.vibrate(milliseconds);
 			#end
 		});
 
