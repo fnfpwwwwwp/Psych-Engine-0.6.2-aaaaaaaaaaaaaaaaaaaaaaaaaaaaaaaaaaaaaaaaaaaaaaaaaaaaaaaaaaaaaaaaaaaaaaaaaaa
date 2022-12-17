@@ -47,14 +47,6 @@ class Main extends Sprite
 	public function new()
 	{
 		super();
-
-                #if !android
-		Lib.current.loaderInfo.uncaughtErrorEvents.addEventListener(UncaughtErrorEvent.UNCAUGHT_ERROR, onCrash);
-		#else
-		SUtil.uncaughtErrorHandler();
-		#end
-		
-		SUtil.check();
 		
 		if (stage != null)
 		{
